@@ -1,10 +1,10 @@
-import { Stack, StackProps, RemovalPolicy } from 'aws-cdk-lib';
-import * as s3 from 'aws-cdk-lib/aws-s3'
+import { Stack, StackProps } from 'aws-cdk-lib';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
-import {BucketDeployment, Source} from "aws-cdk-lib/aws-s3-deployment";
+import { BucketDeployment, Source } from "aws-cdk-lib/aws-s3-deployment";
 import * as path from "path";
-import {Distribution, OriginAccessIdentity} from "aws-cdk-lib/aws-cloudfront";
-import {S3Origin} from "aws-cdk-lib/aws-cloudfront-origins";
+import { Distribution, OriginAccessIdentity } from "aws-cdk-lib/aws-cloudfront";
+import { S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
 
 
 export class AwsCdkS3WebsiteStack extends Stack {
@@ -26,7 +26,7 @@ export class AwsCdkS3WebsiteStack extends Stack {
       defaultRootObject: 'index.html',
       defaultBehavior: {
       origin: new S3Origin(websitebucket, {originAccessIdentity}),
-      },
+      }
     })
   } 
 } 
