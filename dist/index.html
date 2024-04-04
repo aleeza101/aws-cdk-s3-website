@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; margin: 0;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleeza Sadiq - Cloud Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Roboto Mono', monospace;
+            color: #0f0;
+            background: #121212;
+            align-items: center;
+        }
+        .main-container {
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            padding: 20px;
+            margin-top: 60px; /* Adjust based on your header height */
+            box-sizing: border-box;
+        }
+        .content-container {
+            flex: 1;
+        }
+        .profile-section {
+            width: 300px;
+            margin-left: 20px; /* Space between content and profile photo */
+        }
+        .profile-photo {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        header, footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(90deg, #012339, #121212);
+            color: #fff;
+        }
+        .content-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-left: 5px solid #0f0;
+        }
+        /* Rest of your CSS */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aleeza Sadiq</h1>
+        <h2>Cloud Consultant | AWS Expert</h2>
+    </header>
+
+    <div class="main-container">
+        <div class="content-container">
+            <!-- Dynamic content goes here  -->
+            <div class="container content-section" id="summary"><h2>Summary</h2><p></p></div>
+            <div class="container content-section" id="skills"><h2>Skills</h2><p></p></div>
+            <div class="container content-section" id="certifications"><h2>Certifications</h2><p></p></div>
+            <div class="container content-section" id="experience"><h2>Experience</h2><p></p></div>
+
+            <!-- ... other content sections ... -->
+        </div>
+
+        <!-- Profile photo section -->
+        <div class="profile-section">
+            <img src="./IMG_2385.jpg" alt="Aleeza Sadiq" class="profile-photo">
+        </div>
+    </div>
+</div>
+    <footer>
+        <p>Contact: fhaider2@gmu.edu | (571) 379-2852</p>
+    </footer>
+
+    <script>
+        // Define the content for each section to be typed out
+        const sections = [
+            {
+                id: 'summary',
+                content: "Cloud Consultant with 4+ years of experience leading the architecture enhancement and troubleshooting of complex cloud environments, focusing on serverless technologies, cloud-agnostic services, and IaC. A hands-on leader and trusted advisor, skilled in automating security compliance, enhancing cloud security, and maximizing efficiency."
+            },
+            {
+                id: 'skills',
+                content: "Information Security: Data Security & Privacy, Business Continuity & Disaster Recovery...<br>Engineering: Fullstack Development, Backend & Infrastructure, IaC, Cloud Architecture...<br>Leadership: Strategic Planning & Execution, Project Management...<br>Tech: Bash/Shell, C, C#, CSS, HTML, Java, JavaScript, TypeScript, Python...<br>AWS: API Gateway, Cognito, Cloud9, CloudFormation, CloudFront, CloudTrail..."
+            },
+            {
+                id: 'certifications',
+                content: "CompTIA Security+<br>Certified SCRUM Master (CSM)<br>Certified SCRUM Developer (CSD)<br>AWS Certified Solutions Architect - Professional<br>Microsoft Certified: Azure Fundamentals"
+            },
+            {
+                id: 'experience',
+                content: "December 2021 - Present: Led an innovative internal project to create an open-source Cloud Development Kit. Coordinated engagements with marketing and security, collaborated with company leaders..."
+            }
+        ];
+        // Improved function to handle typing effect with HTML content properly
+        function typeOutHtmlContent(elementId, htmlContent, typingSpeed) {
+            const container = document.getElementById(elementId);
+            let visibleText = ''; // Track visible text for typing effect
+            let remainder = htmlContent; // Track unprocessed part of htmlContent
+            
+            // Function to process the next part of the content
+            function processNext() {
+                if (remainder.length === 0) return; // Stop if all content has been processed
+    
+                if (remainder.startsWith('<')) {
+                    // Handle an HTML tag
+                    const tagEnd = remainder.indexOf('>') + 1;
+                    const tag = remainder.substring(0, tagEnd);
+                    container.innerHTML += tag; // Append the complete tag to the container
+                    remainder = remainder.substring(tagEnd); // Update the remainder
+                    setTimeout(processNext, typingSpeed); // Process the next part after a brief pause
+                } else {
+                    // Handle regular text
+                    const nextChar = remainder[0];
+                    visibleText += nextChar;
+                    container.innerHTML += nextChar; // Append the next character to the container
+                    remainder = remainder.substring(1); // Update the remainder
+                    setTimeout(processNext, typingSpeed); // Continue typing
+                }
+            }
+    
+            processNext(); // Start processing
+        }
+    
+        window.onload = () => {
+            sections.forEach((section, index) => {
+                // Determine the correct element for output (p or ul) based on the section content
+                let outputElementId = section.id;
+                if (section.content.startsWith("<li>")) { // Assuming list items should go inside a <ul> or <ol>
+                    outputElementId += "-list"; // Append '-list' to id for <ul> elements
+                }
+    
+                // Initialize the container to be empty before typing starts
+                document.getElementById(outputElementId).innerHTML = '';
+    
+                // Start typing out the content with a delay between sections
+                setTimeout(() => {
+                    typeOutHtmlContent(outputElementId, section.content, 50); // Adjust typing speed as needed
+                }, 1000 * index); // Start delay for each section to give a staggered effect
+            });
+        };
+    </script>
+    
+</body>
+</html>
