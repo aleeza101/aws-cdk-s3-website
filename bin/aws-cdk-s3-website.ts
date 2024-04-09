@@ -2,12 +2,10 @@
 import * as cdk from 'aws-cdk-lib';
 import { AwsCdkS3WebsiteStack } from '../lib/aws-cdk-s3-website-stack';
 import { AwsSolutionsChecks, NagSuppressions} from 'cdk-nag';
-import { FarazGoated } from '../lib/farazgoat';
 
 const app = new cdk.App();
 
 var myWebsiteStack = new AwsCdkS3WebsiteStack(app, 'AwsCdkS3WebsiteStack');
-// var fawaz = new FarazGoated(app, "teehee");
 
 cdk.Aspects.of(app).add(new AwsSolutionsChecks({verbose: true}))
 
