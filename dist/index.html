@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleeza Sadiq - Cloud Consultant</title>
+    <title>Aleeza Sadiq - College Second Year</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         html, body {
@@ -58,7 +58,7 @@
 <body>
     <header>
         <h1>Aleeza Sadiq</h1>
-        <h2>Cloud Consultant | AWS Expert</h2>
+        <h2>Second Year at UVA | Double Major in Economics and Statistics with a minor in Data Science</h2>
     </header>
 
     <div class="main-container">
@@ -66,7 +66,7 @@
             <!-- Dynamic content goes here  -->
             <div class="container content-section" id="summary"><h2>Summary</h2><p></p></div>
             <div class="container content-section" id="skills"><h2>Skills</h2><p></p></div>
-            <div class="container content-section" id="certifications"><h2>Certifications</h2><p></p></div>
+            <div class="container content-section" id="projects"><h2>Projects</h2><p></p></div>
             <div class="container content-section" id="experience"><h2>Experience</h2><p></p></div>
 
             <!-- ... other content sections ... -->
@@ -74,12 +74,12 @@
 
         <!-- Profile photo section -->
         <div class="profile-section">
-            <img src="./IMG_2385.jpg" alt="Aleeza Sadiq" class="profile-photo">
+            <img src="./IMG_4473.jpeg" alt="Aleeza Sadiq" class="profile-photo">
         </div>
     </div>
 </div>
     <footer>
-        <p>Contact: fhaider2@gmu.edu | (571) 379-2852</p>
+        <p>Contact: eqq9wc@virginia.edu | (703) 930-3092</p>
     </footer>
 
     <script>
@@ -87,21 +87,22 @@
         const sections = [
             {
                 id: 'summary',
-                content: "Cloud Consultant with 4+ years of experience leading the architecture enhancement and troubleshooting of complex cloud environments, focusing on serverless technologies, cloud-agnostic services, and IaC. A hands-on leader and trusted advisor, skilled in automating security compliance, enhancing cloud security, and maximizing efficiency."
+                content: "A results-driven, passionate, and multitalented scholar of statistics...<br>with a special interest in how the power of cloud computing technologies...<b>can stimulate the economy and improve business outcomes."
             },
             {
                 id: 'skills',
-                content: "Information Security: Data Security & Privacy, Business Continuity & Disaster Recovery...<br>Engineering: Fullstack Development, Backend & Infrastructure, IaC, Cloud Architecture...<br>Leadership: Strategic Planning & Execution, Project Management...<br>Tech: Bash/Shell, C, C#, CSS, HTML, Java, JavaScript, TypeScript, Python...<br>AWS: API Gateway, Cognito, Cloud9, CloudFormation, CloudFront, CloudTrail..."
+                content: "Cloud Development Kit (CDK), CDK-Nag, AWS Cloud Architecture, Git...<br>Agile Methodologies, Project Managment, Collaboration, Microsoft Office Suite...<br>Financial Management, Technical Writing, Motivated, and Adaptable..."
             },
             {
-                id: 'certifications',
-                content: "CompTIA Security+<br>Certified SCRUM Master (CSM)<br>Certified SCRUM Developer (CSD)<br>AWS Certified Solutions Architect - Professional<br>Microsoft Certified: Azure Fundamentals"
+                id: 'projects',
+                content: "Focus: Infrastructure as Code (IaC), Serverless, Artificial Intelligence/Machine Learning <br> Implementation: Deployed an S3 Hosted Website via CDK (TypeScript)"
             },
             {
                 id: 'experience',
-                content: "December 2021 - Present: Led an innovative internal project to create an open-source Cloud Development Kit. Coordinated engagements with marketing and security, collaborated with company leaders..."
+                content: "May 2023 - August 2023: Teacher's Aide at Primrose Schools. Constructed Bugdet Financial Analysis Processes in SQL <br> May 2022 - August 2022: IT Intern at Net Services. Achieved Understanding of Cloud Technologies..."
             }
         ];
+
         // Improved function to handle typing effect with HTML content properly
         function typeOutHtmlContent(elementId, htmlContent, typingSpeed) {
             const container = document.getElementById(elementId);
@@ -124,7 +125,7 @@
                     const nextChar = remainder[0];
                     visibleText += nextChar;
                     container.innerHTML += nextChar; // Append the next character to the container
-                    remainder = remainder.substring(1); // Update the remainder
+                    remainder  = remainder.substring(1); // Update the remainder
                     setTimeout(processNext, typingSpeed); // Continue typing
                 }
             }
